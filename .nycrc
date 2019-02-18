@@ -1,0 +1,18 @@
+{
+    "sourceMap": false,
+    "check-coverage": false,
+    "per-file": true,
+    "all": true,
+    "reporter": [
+        "html"
+    ],
+    "include": [
+        "src/**/*.js"
+    ],
+    "exclude": [
+        "src/Application.js"
+    ],
+    "require": [
+        "./test/Env"
+    ]
+}

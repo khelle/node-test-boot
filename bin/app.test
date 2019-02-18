@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+
+testMode=MANY
+testFile=""
+testType=""
+
+enabledTypes=()
+
+function join_by { local IFS="$1"; shift; echo "$*"; }
+
+for ((i=1;i<=$#;i++));
+do
+
+    if [[ ${!i} =~ ^--test=.+$ ]]; then
+        testMode=ONCE
+        testFile=${!i#--test=}
+    elif [[ ${!i} =~ ^--unit$ ]]; then
+        enabledTypes+=('unit')
+    elif [[ ${!i} =~ ^--integrate$ ]]; then
+        enabledTypes+=('integrate')
+    elif [[ ${!i} =~ ^--all ]]; then
+        enabledTypes+=('unit')
+        enabledTypes+=('integrate')
+    fi
+
+done;
+
+testType=$(join_by , "${enabledTypes[@]}")
+
+TEST_MODE=$testMode TEST_FILE=$testFile TEST_TYPE=$testType bash ./app test:run

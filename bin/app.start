@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+path=$( cd "$(dirname "${BASH_SOURCE[0]}")" ; pwd -P )
+cd "$path/..";
+./node_modules/babel-cli/bin/babel-node.js ./bin/autorun/node.run

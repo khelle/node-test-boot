@@ -1,0 +1,36 @@
+#!/usr/bin/env node
+
+const Path    = require('path');
+
+/**
+ * Parse arguments
+ */
+const args = [];
+for (let i=2; i<process.argv.length; i++) {
+    const [ argKey, argVal ] = process.argv[i].replace('--', '').split('=');
+    args[argKey] = argVal;
+}
+
+/**
+ * Declare paths & variables.
+ */
+const dataPath = Path.resolve(__dirname, '..');
+const basePath = Path.resolve(dataPath, '..');
+
+/**
+ * Include autoloader & dependencies.
+ */
+const Application = require(basePath+'/src/Application');
+
+/**
+ * Create process instance.
+ */
+try
+{
+    const app = new Application();
+    app.create();
+}
+catch (err)
+{
+    process.stdout.write(err.stack + "\n");
+}

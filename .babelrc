@@ -1,0 +1,15 @@
+{
+    "presets": [],
+    "plugins": [],
+    "env": {
+        "prod": {
+            "plugins": [
+            ]
+        },
+        "test": {
+            "plugins": [
+                "istanbul"
+            ]
+        }
+    }
+}

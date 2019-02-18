@@ -1,0 +1,60 @@
+# IDE
+.idea
+*.sublime-*
+
+# Vendors
+.vagrant
+vendor
+node_modules
+composer.lock
+composer.phar
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Cache
+.tscache
+.npm
+
+# Logs
+npm-debug.log
+
+# Locks
+*.lock
+package-lock.json
+
+# Environment variables
+*.env
+
+# Other
+[Tt]humbs.db
+.DS_Store
+
+# Options
+.v8-options
+
+# Configuration
+forever.json
+config.json
+config.*.json
+
+# Data Files
+datalogs
+
+# Playground
+playground
+
+# Keys
+keys/*
+!keys/README.md
+
+# SSL Cert
+cert/*
+!cert/.keep
+
+# Code coverage reports
+coverage/*
+.nyc_output

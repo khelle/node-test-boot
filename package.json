@@ -1,0 +1,32 @@
+{
+  "name": "test-bootstrap",
+  "version": "0.1.0",
+  "description": "Test Bootstrap",
+  "license": "UNLICENSED",
+  "private": true,
+  "repository": {
+    "url": "git@github.com:khelle/node-test-boot.git",
+    "type": "git"
+  },
+  "scripts": {
+    "app:start": "bash ./bin/app.start",
+    "app:test:start": "bash ./bin/app.test",
+    "app:test:run": "env NODE_ENV=test ./node_modules/mocha/bin/mocha --check-leaks --require babel-register test/Boot.js",
+    "app:test:coverage": "env NODE_ENV=test TEST_MODE=MANY TEST_TYPE=unit,integrate ./node_modules/nyc/bin/nyc.js ./node_modules/mocha/bin/_mocha --check-leaks --require babel-register test/Boot.js src/**/*.js"
+  },
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-plugin-istanbul": "^5.1.0",
+    "bignumber.js": "4.0.2",
+    "bluebird": "^3.5.3"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
+    "chai-spies": "^1.0.0",
+    "mocha": "^5.2.0",
+    "nyc": "^13.1.0",
+    "sinon": "^7.1.1"
+  }
+}
